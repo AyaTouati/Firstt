@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Book
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-item color="secondary" lines="none">
+      <ion-label class="ion-text-center">
+        <h1>Gestion de livres</h1>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-button (click)="allerAjout()">
+    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+    Ajouter un livre
+  </ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let lv of lvrs">
+      <ion-avatar slot="start">
+        <img src="assets/livre.png"/>
+      </ion-avatar>
+      <ion-label>
+        <h1>{{ lv.data.titre }}</h1>
+        <h2>Prix:{{ lv.data.prix}} </h2>
+        <h6>Quantité:{{ lv.data.quantite}}</h6>
+
+      </ion-label>
+      <ion-button (click)="delEtd(lv);">Del</ion-button>
+    </ion-item>
+
+  </ion-list>
+    
+</ion-content>
